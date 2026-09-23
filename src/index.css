@@ -1,0 +1,57 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-accent selection:text-black;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/50 backdrop-blur-md border border-surface-border;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(169, 223, 255, 0.15);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(169, 223, 255, 0.25);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(169, 223, 255, 0.15);
+  }
+  
+  .bg-grid {
+    background-image: linear-gradient(to right, #1f1f1f 1px, transparent 1px), linear-gradient(to bottom, #1f1f1f 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
